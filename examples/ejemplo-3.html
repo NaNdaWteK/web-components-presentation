@@ -1,0 +1,50 @@
+<html>
+    <style>
+        .container{
+            width: 30%;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 100px);
+            grid-gap: .4em;
+        }
+        .grid-2{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            grid-gap: .4em;
+        }
+        .grid-item{
+            padding: 1em;
+            background-color: #ccc;
+            border: 1px solid #000;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="grid">
+                <div class="grid-item">A</div>
+                <div class="grid-item">B</div>
+                <div class="grid-item">C</div>
+                <div class="grid-item">D</div>
+                <div class="grid-item">E</div>
+                <div class="grid-item">F</div>
+                <div class="grid-item">G</div>
+                <div class="grid-item">H</div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="grid-2">
+                <div class="grid-item">A</div>
+                <div class="grid-item">B</div>
+                <div class="grid-item">C</div>
+                <div class="grid-item">D</div>
+                <div class="grid-item">E</div>
+                <div class="grid-item">F</div>
+                <div class="grid-item">G</div>
+                <div class="grid-item">H</div>
+            </div>
+        </div>
+        <br>
+    </body>
+</html>

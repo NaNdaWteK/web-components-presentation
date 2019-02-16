@@ -1,0 +1,39 @@
+<html>
+    <style>
+        .container{
+            width: 30%;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: .4em;
+        }
+        .grid-item{
+            padding: 1em;
+            background-color: #ccc;
+            border: 1px solid #000;
+        }
+        .grid-item:first-child{
+            grid-column: 2/4;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="grid">
+                <div class="grid-item">A</div>
+                <div class="grid-item">B</div>
+                <div class="grid-item">C</div>
+                <div class="grid-item">D</div>
+                <div class="grid-item">E</div>
+                <div class="grid-item">F</div>
+                <div class="grid-item">G</div>
+                <div class="grid-item">H</div>
+                <div class="grid-item">I</div>
+                <div class="grid-item">J</div>
+                <div class="grid-item">K</div>
+            </div>
+        </div>
+    </body>
+</html>

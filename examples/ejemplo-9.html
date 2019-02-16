@@ -1,0 +1,48 @@
+<html>
+    <style>
+        .container{
+            width: 30%;
+            background-color: #474646;
+        }
+        .grid-item{
+            padding: 1em;
+            background-color: red;
+            border: 1px solid #000;
+        }
+
+        .grid{
+        	display: grid;
+        	grid-gap: .5rem;
+        	grid-template-columns: repeat(3, minmax(5em, 1fr));
+        	grid-template-rows: repeat(2, minmax(6em, auto));
+        }
+        .grid-item:nth-child(1){
+        	grid-column: span 2;
+        }
+        .grid-item:nth-child(3){
+        	grid-column: span 3;
+        }
+
+        .grid{
+        	justify-items: start;
+        	justify-items: end;
+        	justify-items: center;
+        	justify-items: stretch;
+
+        	align-items: start;
+        	align-items: end;
+        	align-items: center;
+        	align-items: stretch;
+        }
+
+    </style>
+    <body>
+        <div class="container">
+            <div class="grid">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+            </div>
+        </div>
+    </body>
+</html>

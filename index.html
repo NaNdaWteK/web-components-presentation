@@ -1,0 +1,166 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Web components en acción</title>
+
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/night.css">
+<link rel='stylesheet' href='css/custom.css'>
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<div class="reveal">
+	<div class="slides">
+		<section>
+			<section>
+				<img class='plain' style='width: 200px; height: 200px; background: transparent' data-src='./img/devscola.png' />
+				<h2>Web Components</h2>
+				<ul>
+					<li>Javascript nativo</li>
+					<li>CSS</li>
+					<li>HTML</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Custom Elements</h3>
+				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
+				<ul>
+					<li>Registrar nuestras propias etiquetas HTML</li>
+					<li>Extender funcionalidad de las etiquetas HTML.</li>
+					<li>Ayudan en reutilización del código.</li>
+					<li>...</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Shadow down</h3>
+				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
+				<ul>
+					<li>Dom separado del arbol del HTML</li>
+					<li>Encapsulan la lógica de nuestro componentes.</li>
+					<li>Evita la colisión de nuestras reglas CSS.</li>
+					<li>Permite el flujo de eventos arriba a abajo, para el reparto de responsabilidades.</li>
+					<li>...</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Templates y slots</h3>
+				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
+				<ul>
+					<li>Podemos añadir HTML a nuestro web component.</li>
+					<li>Tenemos acceso a el interior de las etiquetas del web component.</li>
+					<li>...</li>
+				</ul>
+			</section>
+		</section>
+		<section>
+			<section>
+				<img class='plain' style='width: 200px; height: 200px; background: transparent' data-src='./img/devscola.png' />
+				<h2>Por que Web Components?</h2>
+			</section>
+
+			<section>
+				<h3>Encapsulan la lógica y la UI</h3>
+				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
+				<br>
+				<ul>
+					<li>Separación de responsabilidades</li>
+					<li>Fáciles de entender.</li>
+					<li>Fáciles de mantener.</li>
+					<li>...</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Reusabilidad de página, app o proyetos</h3>
+				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
+				<ul>
+					<li>Pasarán a ser etiquetas HTML</li>
+					<li>Escribe la lógica del component sólo una vez.</li>
+					<li>Se pueden publicar via npm</li>
+					<li>...</li>
+				</ul>
+			</section>
+		</section>
+		<section>
+			<section>
+				<img class='plain' style='width: 200px; height: 200px; background: transparent' data-src='./img/devscola.png' />
+				<h2>Ciclo de vida del web component</h2>
+			</section>
+
+			<section>
+				<h3>1. constructor()</h3>
+				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
+				<ul>
+					<li>Al crear el componente</li>
+					<li>Sirve para las inicializaciones básicas: super(), shadowRoot, template,...</li>
+				</ul>
+			</section>
+			<section>
+				<h3>2. connectedCallback()</h3>
+				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
+				<ul>
+					<li>Cuando el componente se añade al dom</li>
+					<li>Todo lo que necesitemos del dom, como atributos del componente, eventos,...</li>
+				</ul>
+			</section>
+			<section>
+				<h3>2. disconnectedCallback()</h3>
+				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
+				<ul>
+					<li>Cuando el componente se remueve del dom</li>
+					<li>Remover eventos,...</li>
+				</ul>
+			</section>
+			<section>
+				<h3>2. attributeChangedCallback(name, oldValue, newValue)</h3>
+				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
+				<ul>
+					<li>Cuando observamos atributos del dom</li>
+					<li>Lanzar eventos, actualizar datos,...</li>
+					<li>Necesita de static get observedAttributes() para indicar que atributos estamos observando</li>
+				</ul>
+			</section>
+		</section>
+		<section>
+			<section>
+				<section>
+					<h1>Vamos allá!!!</h1>
+					<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/cat-keyboard.gif' />
+				</section>
+			</section>
+		</section>
+	</div>
+	<div class='footer'>
+		<img class='plain' style='width: 40px; height: 40px' src='./img/nandawtek.jpg' />
+		<span>@nandawtek</span>
+	</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+	// More info https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+		history: true,
+
+		// More info https://github.com/hakimel/reveal.js#dependencies
+		dependencies: [
+			{ src: 'plugin/markdown/marked.js' },
+			{ src: 'plugin/markdown/markdown.js' },
+			// { src: 'plugin/notes/notes.js', async: true },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+		]
+	});
+</script>

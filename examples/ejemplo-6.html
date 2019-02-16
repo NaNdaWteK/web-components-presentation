@@ -1,0 +1,31 @@
+<html>
+    <style>
+        .container{
+            width: 30%;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: [start] minmax(100px, 20%) [main] 1fr [end];
+            grid-template-rows: [header] 100px [main] 250px [footer] 100px [end];
+            grid-gap: .4em;
+        }
+        .grid-item{
+            padding: 1em;
+            background-color: #ccc;
+            border: 1px solid #000;
+        }
+        .grid-item:first-child, .grid-item:last-child {
+            grid-column: start/end;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="grid">
+                <div class="grid-item">HEADER</div>
+                <div class="grid-item">SIDEBAR</div>
+                <div class="grid-item">MAIN</div>
+                <div class="grid-item">FOOTER</div>
+            </div>
+        </div>
+    </body>
+</html>

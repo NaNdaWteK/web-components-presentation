@@ -1,0 +1,4 @@
+Con texto overflow*********************
+grid-auto-rows: 100px; vs grid-auto-rows: minmax(100px, auto);
+Consejo => Usar minmax en rows
+***************************************
