@@ -134,6 +134,53 @@
 		</section>
 		<section>
 			<section>
+				<img class='plain' style='width: 200px; height: 200px; background: transparent' data-src='./img/devscola.png' />
+				<h2>Css en los web components</h2>
+			</section>
+
+			<section>
+				<h3>Estilos al web component tag</h3>
+				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
+				<ul>
+					<li>Los estilos definidos en el light dom tienen preferencia</li>
+					<li>:host{background-color: red;}</li>
+					<li>:host.classname{background-color: red;}#no funciona</li>
+					<li>:host(.classname){background-color: red;}</li>
+					<li>:host-context(div){}# a modo de condicionar de su wrapper</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Estilos al slot</h3>
+				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
+				<ul>
+					<li>El contenido del slot, esta referenciado en el shadow dom, pero pertenece al light dom</li>
+					<li>::slotted(.classname){}</li>
+					<li>::slotted(span){}</li>
+					<li>::slotted(span strong){}#no funciona</li>
+				</ul>
+			</section>
+			<section>
+				<h3>CSS Variables</h3>
+				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
+				<ul>
+					<li>Definidas en el light dom con :root o html selector</li>
+					<li>Al ser un selector tan amplio, si hubieran variables repetidas podría colisionar con otros web components, por lo que es interesante nombrarlas</li>
+					<li>Pueden tener valor por defecto en el shadow dom por si no estuvieran definidas.</li>
+				</ul>
+			</section>
+		</section>
+		<section>
+			<section>
+				<img class='plain' style='width: 200px; height: 200px; background: transparent' data-src='./img/devscola.png' />
+				<h2>Eventos especiales</h2>
+			</section>
+
+			<section>
+				<h3>Existe el evento slotchange, por si cambiara el contenido del slot, que NO el css!!!</h3>
+			</section>
+		</section>
+		<section>
+			<section>
 				<section>
 					<h1>Vamos allá!!!</h1>
 					<img class='plain' style='max-width: 450px;height: auto; border-radius:50%;' data-src='./img/cat-keyboard.gif' />
