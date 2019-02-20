@@ -78,6 +78,7 @@
 					<li>Separación de responsabilidades</li>
 					<li>Fáciles de entender.</li>
 					<li>Fáciles de mantener.</li>
+					<li>Fáciles de usar.</li>
 					<li>...</li>
 				</ul>
 			</section>
@@ -102,7 +103,7 @@
 				<h3>1. constructor()</h3>
 				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
 				<ul>
-					<li>Al crear el componente</li>
+					<li style="color:red;">Al crear el componente</li>
 					<li>Sirve para las inicializaciones básicas: super(), shadowRoot, template,...</li>
 				</ul>
 			</section>
@@ -110,7 +111,7 @@
 				<h3>2. connectedCallback()</h3>
 				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
 				<ul>
-					<li>Cuando el componente se añade al dom</li>
+					<li style="color:red;">Cuando el componente se añade al dom</li>
 					<li>Todo lo que necesitemos del dom, como atributos del componente, eventos,...</li>
 				</ul>
 			</section>
@@ -118,7 +119,7 @@
 				<h3>2. disconnectedCallback()</h3>
 				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
 				<ul>
-					<li>Cuando el componente se remueve del dom</li>
+					<li style="color:red;">Cuando el componente se remueve del dom</li>
 					<li>Remover eventos,...</li>
 				</ul>
 			</section>
@@ -126,7 +127,7 @@
 				<h3>2. attributeChangedCallback(name, oldValue, newValue)</h3>
 				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
 				<ul>
-					<li>Cuando observamos atributos del dom</li>
+					<li style="color:red;">Cuando cambian los atributos web component</li>
 					<li>Lanzar eventos, actualizar datos,...</li>
 					<li>Necesita de static get observedAttributes() para indicar que atributos estamos observando</li>
 				</ul>
@@ -140,18 +141,16 @@
 
 			<section>
 				<h3>Estilos al web component tag</h3>
-				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
 				<ul>
-					<li>Los estilos definidos en el light dom tienen preferencia</li>
 					<li>:host{background-color: red;}</li>
 					<li>:host.classname{background-color: red;}#no funciona</li>
 					<li>:host(.classname){background-color: red;}</li>
 					<li>:host-context(div){}# a modo de condicionar de su wrapper</li>
 				</ul>
+				<p>Nota: Los estilos definidos en el light dom tienen preferencia</p>
 			</section>
 			<section>
 				<h3>Estilos al slot</h3>
-				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
 				<ul>
 					<li>El contenido del slot, esta referenciado en el shadow dom, pero pertenece al light dom</li>
 					<li>::slotted(.classname){}</li>
@@ -161,7 +160,6 @@
 			</section>
 			<section>
 				<h3>CSS Variables</h3>
-				<img class='plain' style='max-width: 450px;height: auto;' data-src='./img/how.jpg' />
 				<ul>
 					<li>Definidas en el light dom con :root o html selector</li>
 					<li>Al ser un selector tan amplio, si hubieran variables repetidas podría colisionar con otros web components, por lo que es interesante nombrarlas</li>
